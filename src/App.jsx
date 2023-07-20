@@ -16,7 +16,7 @@ function App() {
       <h1 className="app-title">Todo App</h1>
       <SearchBar setSearchResults={setFilteredTodos} todos={todos} />
       <FilterOptions setFilteredTodos={setFilteredTodos} todos={todos} />
-      <AddTodoForm addTodo={setTodos} />
+      <AddTodoForm addTodo={setTodos} addFilterTodo={setFilteredTodos} />
       <ToDoList todos={filteredTodos || todos} setTodos={setTodos} setFilteredTodos={setFilteredTodos} />
     </section>
   );

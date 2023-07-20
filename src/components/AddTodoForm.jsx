@@ -2,7 +2,7 @@ import React, { useId, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import "./components.css";
 
-const AddTodoForm = ({ addTodo }) => {
+const AddTodoForm = ({ addTodo, addFilterTodo }) => {
   const [newTodo, setNewTodo] = useState("");
   // sets the new todo to the list
   const handleSubmit = (e) => {
@@ -10,6 +10,14 @@ const AddTodoForm = ({ addTodo }) => {
     if (newTodo.trim() === "") return;
 
     addTodo((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        text: newTodo,
+        completed: false,
+      },
+    ]);
+    addFilterTodo((prev) => prev && [
       ...prev,
       {
         id: Date.now(),
