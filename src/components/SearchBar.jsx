@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import { BiSearchAlt } from "react-icons/bi";
+import "./components.css";
+
 const SearchBar = ({ setSearchResults, todos }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -17,7 +20,9 @@ const SearchBar = ({ setSearchResults, todos }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search Todo..."
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="search-btn" onClick={handleSearch}>
+        <BiSearchAlt />
+      </button>
     </section>
   );
 };

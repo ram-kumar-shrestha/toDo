@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+
+:root {
+  --primary-color: #e1eedd;
+  --secondary-color: #f0a04b;
+  --tertiary-color: #fefbe9;
+  --text-color: #434343;
+  --higlight-color: #183a1d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  background-color: var(--tertiary-color);
+}
+
+body *::selection {
+  background-color: var(--secondary-color);
+}
+
+.app {
+  width: 85%;
+  margin: 2em auto;
+  padding: 2%;
+  background-color: var(--primary-color);
+  box-shadow: 0.2em 0.3em 0.5em rgb(14 14 14/0.3);
+  border-radius: 1em;
+  min-height: calc(100svh - 4em);
+}
+
+.app-title {
+  color: var(--higlight-color);
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+button {
+  border: 0.1em solid var(--higlight-color);
+  padding: 1%;
+  font-size: 1em;
+  margin: 1%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (min-width: 768px) {
+  .app {
+    width: 65%;
+    min-height: 92svh;
+  }
+
+  .app-title {
+    margin: 0;
+  }
+}

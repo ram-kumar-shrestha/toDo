@@ -1,4 +1,6 @@
 import React, { useId, useState } from "react";
+import { AiOutlinePlus } from "react-icons/ai";
+import "./components.css";
 
 const AddTodoForm = ({ addTodo }) => {
   const [newTodo, setNewTodo] = useState("");
@@ -19,14 +21,16 @@ const AddTodoForm = ({ addTodo }) => {
     setNewTodo("");
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="add-todo__form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
         placeholder="Add a todo task..."
       />
-      <button type="submit">Add</button>
+      <button className="add-btn" type="submit">
+        <AiOutlinePlus />
+      </button>
     </form>
   );
 };

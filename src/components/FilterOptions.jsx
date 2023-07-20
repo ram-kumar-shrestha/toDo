@@ -1,7 +1,8 @@
 import React from "react";
 
+import "./components.css";
+
 const FilterOptions = ({ setFilteredTodos, todos }) => {
-  console.log(todos);
   const handleFilter = (filterType) => {
     const filteredTodos = todos.filter((todo) => {
       if (filterType === "completed") return todo.completed;
